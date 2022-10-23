@@ -19,6 +19,11 @@ class ArticlesService: ArticlesServiceProtocol {
         HttpRequestHelper().GET(url: webserviceURL, params: ["": ""], httpHeader: .application_json) { success, data in
             if success {
                 do {
+                    
+//                    if let JSONString = String(data: data!, encoding: String.Encoding.utf8) { // print JSON
+//                        print(JSONString)
+//                    }
+                    
                     let model = try JSONDecoder().decode(Article.self, from: data!)
                     completion(true, model, nil)
                 } catch DecodingError.dataCorrupted(let context) {

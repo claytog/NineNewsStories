@@ -300,15 +300,16 @@ enum FluffyType: String, Codable {
 
 // MARK: - Source
 struct Source: Codable {
-    let tagID: TagID
+    let tagId: TagId?
 
     enum CodingKeys: String, CodingKey {
-        case tagID = "tagId"
+        case tagId = "tagId"
     }
 }
 
-enum TagID: String, Codable {
+enum TagId: String, Codable {
     case afr = "AFR"
+    case aap = "AAP"
     case newStatesman = "New Statesman"
     case theNewYorkTimes = "The New York Times"
 }
@@ -321,8 +322,8 @@ class JSONNull: Codable, Hashable {
         return true
     }
 
-    public var hashValue: Int {
-        return 0
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(0)
     }
 
     public init() {}

@@ -23,11 +23,13 @@ class NineNewsStoriesUITests: XCTestCase {
     }
     
     func testNavigation() {
-        // This UI test ensures that tapping a row in the main table view will make an article detail appear.
+        // This UI test ensures that tapping the first row in the main table view will make an article detail appear.
         let app = XCUIApplication()
         app.launch()
-        app.tables/*@START_MENU_TOKEN@*/.cells.staticTexts["China-US tech war puts rest of the world in a fix"]/*[[".cells.staticTexts[\"China-US tech war puts rest of the world in a fix\"]",".staticTexts[\"China-US tech war puts rest of the world in a fix\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
-        app.navigationBars["Nine News Stories"].buttons["Nine News Stories"].tap()
+        if (app.tables.element(boundBy: 0).cells.count > 0) {
+            app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+            app.navigationBars["Nine News Stories"].buttons["Nine News Stories"].tap()
+        }
     }
     
     func testLaunchPerformance() throws {

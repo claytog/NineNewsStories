@@ -56,7 +56,6 @@ extension UIImageView {
                     if imageURL == url {
                         self.image = imageToCache
                     }
-
                     imageCache.setObject(imageToCache, forKey: url as AnyObject)
                 }
                 activityIndicator.stopAnimating()

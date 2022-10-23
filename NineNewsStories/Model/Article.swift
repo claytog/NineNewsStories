@@ -1,8 +1,3 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-
 import Foundation
 
 typealias Articles = [Asset]
@@ -66,6 +61,11 @@ struct Asset: Codable {
     let timeStamp: Int?
     let onTime: Int??
     let identifier: String?
+
+    var thumbnail: AssetRelatedImage { // return the smallest image (based on width)
+        let sortedByWidth = relatedImages.sorted(by: { $0.width < $1.width })
+        return sortedByWidth[0]
+    }
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

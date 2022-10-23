@@ -53,7 +53,7 @@ class ArticlesViewModel: NSObject {
         let headline = asset.headline
         let abstract = asset.theAbstract
         let byLine = asset.byLine
-        let thumbnail = asset.relatedImages[0].url
+        let thumbnail = asset.thumbnail.url
         let lastModified = asset.lastModified
         let articleURL = asset.url
         

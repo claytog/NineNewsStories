@@ -23,7 +23,7 @@ class NineNewsStoriesTests: XCTestCase {
     }
 
     func testArticlesViewModel() throws {
-        
+        // This tests the articlesViewModel with the mock data (json string), and ensures that this data is decodable.
         let articlesViewModel = ArticlesViewModel(articleService: ArticlesService())
         
         let jsonData = jsonString.data(using: .utf8)!

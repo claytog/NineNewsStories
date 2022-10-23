@@ -14,8 +14,9 @@ There are just two ViewModels, the `ArticlesViewModel`, and the `ArticleCellView
 
 1. The list of articles has a headline, the abstract, and the author by line.
 2. The latest article is displayed first in the list.
-3. Images are loaded asynchronously and cached.
-4. The list of articles comes from this web service:
+3. Display the smallest image available as a thumbnail on the cell.
+4. Images are loaded asynchronously and cached.
+5. The list of articles comes from this web service:
 `https://bruce-v2-mob.fairfaxmedia.com.au/1/coding_test/13ZZQX/full`
 
 ## Unit Testing

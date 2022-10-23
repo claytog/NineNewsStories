@@ -22,6 +22,12 @@ class NineNewsStoriesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testArticleCellViewModel(){
+        let articalCellViewModel:ArticleCellViewModel = ArticleCellViewModel(headline: "The headline", abstract: "The abstract", byLine: "the by author", thumbnail: "A URL to the thumbnail image", lastModified: 12345, articleURL: "A URL to the article")
+        
+        XCTAssertEqual(articalCellViewModel.headline, "The headline")
+    }
+    
     func testArticlesViewModel() throws {
         // This tests the articlesViewModel with the mock data (json string), and ensures that this data is decodable.
         let articlesViewModel = ArticlesViewModel(articleService: ArticlesService())

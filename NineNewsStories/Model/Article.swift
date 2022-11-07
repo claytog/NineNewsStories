@@ -158,6 +158,7 @@ enum RelatedImageAssetType: String, Codable {
 enum Description: String, Codable {
     case afr = "afr"
     case empty = ""
+    case jessicaSierAFRWoodcut = "Jessica Sier AFR Woodcut"
     case purple = " "
     case ronaldMizenAFRWoodcut = "Ronald Mizen AFR Woodcut"
 }
@@ -186,6 +187,7 @@ struct Company: Codable {
     let companyName: String
     let abbreviatedName: String
     let exchange: String
+    let companyNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -193,6 +195,7 @@ struct Company: Codable {
         case companyName = "companyName"
         case abbreviatedName = "abbreviatedName"
         case exchange = "exchange"
+        case companyNumber = "companyNumber"
     }
 }
 
@@ -292,6 +295,7 @@ enum FluffyType: String, Codable {
     case afrArticleInline = "afrArticleInline"
     case afrArticleLead = "afrArticleLead"
     case afrIndexLead = "afrIndexLead"
+    case articleLeadNarrow = "articleLeadNarrow"
     case articleLeadWide = "articleLeadWide"
     case landscape = "landscape"
     case thumbnail = "thumbnail"
@@ -312,6 +316,7 @@ enum TagId: String, Codable {
     case aap = "AAP"
     case newStatesman = "New Statesman"
     case theNewYorkTimes = "The New York Times"
+    case financialTimes = "Financial Times"
 }
 
 // MARK: - Encode/decode helpers
@@ -555,4 +560,5 @@ class JSONAny: Codable {
         }
     }
 }
+
 

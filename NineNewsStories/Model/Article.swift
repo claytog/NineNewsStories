@@ -126,7 +126,7 @@ struct AuthorRelatedImage: Codable {
     let type: String
     let width: Int
     let height: Int
-    let assetType: RelatedImageAssetType
+    let assetType: String
     let timeStamp: Int
 
     enum CodingKeys: String, CodingKey {
@@ -145,10 +145,6 @@ struct AuthorRelatedImage: Codable {
         case assetType = "assetType"
         case timeStamp = "timeStamp"
     }
-}
-
-enum RelatedImageAssetType: String, Codable {
-    case image = "IMAGE"
 }
 
 // MARK: - Category
@@ -237,7 +233,7 @@ struct AssetRelatedImage: Codable {
     let type: String
     let width: Int
     let height: Int
-    let assetType: RelatedImageAssetType
+    let assetType: String
     let xLarge2X: String?
     let xLarge: String?
     let large2X: String?

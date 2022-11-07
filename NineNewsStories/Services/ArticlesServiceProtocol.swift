@@ -20,9 +20,9 @@ class ArticlesService: ArticlesServiceProtocol {
             if success {
                 do {
                     
-                    if let JSONString = String(data: data!, encoding: String.Encoding.utf8) { // print JSON
-                        print(JSONString)
-                    }
+//                    if let JSONString = String(data: data!, encoding: String.Encoding.utf8) { // print JSON
+//                        print(JSONString)
+//                    }
                     
                     let model = try JSONDecoder().decode(Article.self, from: data!)
                     completion(true, model, nil)

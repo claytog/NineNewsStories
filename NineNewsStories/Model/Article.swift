@@ -54,9 +54,9 @@ struct Asset: Codable {
     let relatedImages: [AssetRelatedImage]
     let signPost: String?
     let companies: [Company]?
-    let legalStatus: LegalStatus?
+    let legalStatus: String?
     let sources: [Source]?
-    let assetType: AssetAssetType?
+    let assetType: String?
     let overrides: Overrides?
     let timeStamp: Int?
     let onTime: Int??
@@ -95,10 +95,6 @@ struct Asset: Codable {
     }
 }
 
-enum AssetAssetType: String, Codable {
-    case article = "ARTICLE"
-}
-
 // MARK: - Author
 struct Author: Codable {
     let name: String
@@ -125,9 +121,9 @@ struct AuthorRelatedImage: Codable {
     let url: String
     let lastModified: Int
     let sponsored: Bool
-    let relatedImageDescription: Description
+    let relatedImageDescription: String
     let photographer: String
-    let type: PurpleType
+    let type: String
     let width: Int
     let height: Int
     let assetType: RelatedImageAssetType
@@ -153,18 +149,6 @@ struct AuthorRelatedImage: Codable {
 
 enum RelatedImageAssetType: String, Codable {
     case image = "IMAGE"
-}
-
-enum Description: String, Codable {
-    case afr = "afr"
-    case empty = ""
-    case jessicaSierAFRWoodcut = "Jessica Sier AFR Woodcut"
-    case purple = " "
-    case ronaldMizenAFRWoodcut = "Ronald Mizen AFR Woodcut"
-}
-
-enum PurpleType: String, Codable {
-    case afrWoodcutAuthorImage = "afrWoodcutAuthorImage"
 }
 
 // MARK: - Category
@@ -199,11 +183,6 @@ struct Company: Codable {
     }
 }
 
-enum LegalStatus: String, Codable {
-    case approved = "Approved"
-    case none = "None"
-}
-
 // MARK: - Overrides
 struct Overrides: Codable {
     let overrideHeadline: String
@@ -225,7 +204,7 @@ struct RelatedAsset: Codable {
     let url: String
     let lastModified: Int
     let sponsored: Bool
-    let assetType: AssetAssetType
+    let assetType: String
     let headline: String
     let timeStamp: Int
     let onTime: Int?
@@ -255,7 +234,7 @@ struct AssetRelatedImage: Codable {
     let sponsored: Bool
     let relatedImageDescription: String
     let photographer: String
-    let type: FluffyType
+    let type: String
     let width: Int
     let height: Int
     let assetType: RelatedImageAssetType
@@ -291,32 +270,9 @@ struct AssetRelatedImage: Codable {
     }
 }
 
-enum FluffyType: String, Codable {
-    case afrArticleInline = "afrArticleInline"
-    case afrArticleLead = "afrArticleLead"
-    case afrIndexLead = "afrIndexLead"
-    case articleLeadNarrow = "articleLeadNarrow"
-    case articleLeadWide = "articleLeadWide"
-    case landscape = "landscape"
-    case thumbnail = "thumbnail"
-    case wideLandscape = "wideLandscape"
-}
-
 // MARK: - Source
 struct Source: Codable {
-    let tagId: TagId?
-
-    enum CodingKeys: String, CodingKey {
-        case tagId = "tagId"
-    }
-}
-
-enum TagId: String, Codable {
-    case afr = "AFR"
-    case aap = "AAP"
-    case newStatesman = "New Statesman"
-    case theNewYorkTimes = "The New York Times"
-    case financialTimes = "Financial Times"
+    let tagId: String?
 }
 
 // MARK: - Encode/decode helpers
